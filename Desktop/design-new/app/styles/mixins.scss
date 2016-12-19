@@ -1,0 +1,96 @@
+@mixin position-center($position){
+  position:$position;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translateY(-50%,-50%);
+  -ms-transform: translateY(-50%,-50%);
+  transform: translateY(-50%,-50%);
+}
+
+@mixin w-h($width, $height) {
+  width:$width;
+  height:$height;
+}
+
+@mixin transition($length){
+  transition: all $length ease;
+  -webkit-transition: all $length ease;
+  -moz-transition: all $length ease;
+  -ms-transition: all $length ease;
+}
+
+@mixin animation($name) {
+  animation-name: $name;
+  animation-duration: .3s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+
+@mixin background($imgpath,$size:cover,$position:center,$repeat: no-repeat) {
+    background: {
+      image: url($imgpath);
+      size: $size;
+      position: $position;
+      repeat: $repeat;
+    }
+}
+
+
+@mixin full-screen{
+  width:100%;
+  height:100vh;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes $name {
+    @content;
+  }
+  @-moz-keyframes $name {
+    @content;
+  }
+  @keyframes $name {
+    @content;
+  }
+}
+
+@mixin mobile-lg {
+  @media (min-width: 300px) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  @media (min-width: 550px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 750px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin desktop-hd {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
